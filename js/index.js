@@ -135,16 +135,18 @@ Create a new variable `phraseToCheck` and have it contain some string value. Wri
   - "Was it a car or a cat I saw?" and "No 'x' in Nixon".
   */
 
-  const phraseToCheck = "Amor, Roma";
+  let phraseToCheck = "Amor, Roma";
 
-  phraseToCheck = phraseToCheck.toLowerCase();
-  
-  const reversedPhraseToCheck = phraseToCheck.reverse;
+  phraseToCheck = phraseToCheck.toLowerCase().replace(/[,!.?]/g, " ");
+   // console.log(phraseToCheck);
+
+  let reversedPhraseToCheck = phraseToCheck.split('').reverse().join('');
+// console.log(reversedPhraseToCheck);
 
   if (phraseToCheck === reversedPhraseToCheck) {
-      console.log ('It's a palindrome);
+      console.log (`${phraseToCheck} : Is a palindrome`);
   } else {
-    console.log ('It isn't a palindrome);
+    console.log (`${phraseToCheck} : Is not a palindrome`);
   }
 
 
